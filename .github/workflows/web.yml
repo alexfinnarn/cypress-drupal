@@ -25,3 +25,18 @@ jobs:
 
       - name: Run cypress.
         run: yarn run cy:run
+
+      - name: Publish test results.
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: github.actor != 'dependabot[bot]'
+        with:
+          files: cypress/*.png
+          check_name: "Cypress Test Results"
+
+      - name: Archive test results.
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-results
+          path: cypress
+          retention-days: 2

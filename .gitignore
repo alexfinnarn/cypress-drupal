@@ -4,3 +4,6 @@ vendor
 node_modules
 
 web/sites/default/files
+
+cypress/screenshots
+cypress/videos
