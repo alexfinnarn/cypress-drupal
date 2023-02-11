@@ -1,2 +1,0 @@
-# deets
-The Deets
