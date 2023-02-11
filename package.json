@@ -6,7 +6,7 @@
   "author": "Alex Finnarn <alex.finnarn@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "cy:open": "cypress open",
+    "cy:open": "cypress open --e2e --browser electron",
     "cy:run": "cypress run"
   },
   "dependencies": {
