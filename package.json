@@ -1,0 +1,15 @@
+{
+  "name": "deets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:alexfinnarn/deets.git",
+  "author": "Alex Finnarn <alex.finnarn@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "dependencies": {
+    "cypress": "^12.5.1"
+  }
+}
