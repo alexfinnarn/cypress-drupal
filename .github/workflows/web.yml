@@ -17,8 +17,18 @@ jobs:
       - name: Install cypress dependencies.
         run: yarn install --frozen-lockfile
 
+      - name: Install ddev.
+        run: |
+          curl -fsSL https://apt.fury.io/drud/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null
+          echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list
+          sudo apt update && sudo apt install -y ddev
+
+      - name: kill
+        run: ddev describe
+
       - name: Boot dddev
-        run: ./ddev start
+#        run: ./ddev start
+        run: cd blah
 
       - name: Install site
         run: ./ddev drush si -y
