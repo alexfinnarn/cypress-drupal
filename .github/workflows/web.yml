@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: list stuff
-        run: ls -al
+        run: ./ddev describe
 
       # Runs a set of commands using the runners shell
 #      - name: Run a multi-line script
