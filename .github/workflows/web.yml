@@ -22,8 +22,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: php-actions/composer@v6
         with:
-          php_version: "7.4"
-          php_extensions: ext-gd
+          php_version: "8.1"
+          php_extensions: gd
 
       # Runs a single command using the runners shell
       - name: list stuff
