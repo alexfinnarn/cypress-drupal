@@ -23,15 +23,11 @@ jobs:
           echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list
           sudo apt update && sudo apt install -y ddev
 
-      - name: kill
-        run: ddev describe
-
       - name: Boot dddev
-#        run: ./ddev start
-        run: cd blah
+        run: ddev start
 
       - name: Install site
-        run: ./ddev drush si -y
+        run: ddev drush si -y
 
       - name: Run cypress.
         run: yarn run cy:run
