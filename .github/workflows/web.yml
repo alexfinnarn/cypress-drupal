@@ -30,18 +30,19 @@ jobs:
         run: ddev drush si -y
 
       - name: Run cypress.
+        id: cypress
         run: yarn run cy:run
 
       - name: Publish test results.
         uses: EnricoMi/publish-unit-test-result-action@v1
-        if: github.actor != 'dependabot[bot]'
+        if: github.actor != 'dependabot[bot]' && steps.cypress.outcome != 'success'
         with:
           files: cypress/*.png
           check_name: "Cypress Test Results"
 
       - name: Archive test results.
         uses: actions/upload-artifact@v2
-        if: always()
+        if: steps.cypress.outcome != 'success'
         with:
           name: cypress-results
           path: cypress
