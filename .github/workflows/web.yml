@@ -19,14 +19,15 @@ jobs:
           php_version: "8.1"
           php_extensions: gd
 
+      - name: Install cypress dependencies.
+        run: yarn install --frozen-lockfile
+
       - name: Boot dddev
         run: ./ddev start
 
       - name: Install site
         run: ./ddev drush si -y
 
-      # Runs a set of commands using the runners shell
-#      - name: Run a multi-line script
-#        run: |
-#          echo Add other actions to build,
-#          echo test, and deploy your project.
+      - name: Run cypress.
+        run: yarn run cy:run
+        depends-on: [ "Install site" ]
