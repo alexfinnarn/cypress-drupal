@@ -19,8 +19,8 @@ jobs:
           node-version: 18
           cache: 'npm'
 
-#      - name: Install cypress dependencies.
-#        run: yarn install --frozen-lockfile
+      - name: Install cypress dependencies.
+        run: yarn install --frozen-lockfile
 
       - name: Install ddev.
         run: |
