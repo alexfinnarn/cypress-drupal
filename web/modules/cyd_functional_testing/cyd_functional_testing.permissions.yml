@@ -1,0 +1,4 @@
+administer cyd_functional_testing configuration:
+  title: 'Administer cyd_functional_testing configuration'
+  description: 'Optional description.'
+  restrict access: true

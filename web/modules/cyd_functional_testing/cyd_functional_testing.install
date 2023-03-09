@@ -1,0 +1,159 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the cyd_functional_testing module.
+ */
+
+use Drupal\user\Entity\User;
+
+const USERS = [
+  'admin' => [
+    'name' => 'da_boss',
+    'role' => 'administrator',
+  ],
+  'editor' => [
+    'name' => 'editor',
+    'role' => 'content_editor',
+  ],
+];
+
+const PAGES = [
+  'bunnies' => [
+    'title' => 'Cute Bunnies!',
+    'path' => '/bunnies',
+    'body' => 'Bunnies are cute!',
+  ],
+  'rabbits' => [
+    'title' => 'Gross Rabbits',
+    'path' => '/rabbits',
+    'body' => 'Rabbits are gross!!!',
+  ],
+];
+
+/**
+ * Implements hook_install().
+ */
+function cyd_functional_testing_install(): void
+{
+  foreach (USERS as $user) {
+    try {
+      User::create([
+        'name' => $user['name'],
+        'pass' => $user['name'],
+        'roles' => [$user['role']],
+        'status' => 1,
+      ])->save();
+    } catch (\Drupal\Core\Entity\EntityStorageException $e) {
+      \Drupal::messenger()->addError($e->getMessage());
+    }
+  }
+
+  foreach (PAGES as $page) {
+    try {
+      $node = \Drupal\node\Entity\Node::create([
+        'type' => 'page',
+        'title' => $page['title'],
+        'path' => $page['path'],
+        'body' => [
+          'format' => 'basic_html',
+          'value' => $page['body'],
+        ],
+      ]);
+      $node->save();
+    } catch (\Drupal\Core\Entity\EntityStorageException $e) {
+      \Drupal::messenger()->addError($e->getMessage());
+    }
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function cyd_functional_testing_uninstall()
+{
+  foreach (USERS as $user) {
+    try {
+      $user = user_load_by_name($user['name']);
+      if (!is_bool($user)) {
+        $user->delete();
+      }
+    } catch (\Drupal\Core\Entity\EntityStorageException $e) {
+      \Drupal::messenger()->addError($e->getMessage());
+    }
+  }
+
+  foreach (PAGES as $page) {
+    try {
+      $nodes = \Drupal::entityTypeManager()
+        ->getStorage('node')
+        ->loadByProperties(['title' => $page['title']]);
+      if (!empty($nodes)) {
+        foreach($nodes as $node) {
+          $node->delete();
+        }
+      }
+    } catch (\Drupal\Core\Entity\EntityStorageException $e) {
+      \Drupal::messenger()->addError($e->getMessage());
+    }
+  }
+}
+
+/**
+ * Implements hook_schema().
+ */
+//function cyd_functional_testing_schema() {
+//  $schema['cyd_functional_testing_example'] = [
+//    'description' => 'Table description.',
+//    'fields' => [
+//      'id' => [
+//        'type' => 'serial',
+//        'not null' => TRUE,
+//        'description' => 'Primary Key: Unique record ID.',
+//      ],
+//      'uid' => [
+//        'type' => 'int',
+//        'unsigned' => TRUE,
+//        'not null' => TRUE,
+//        'default' => 0,
+//        'description' => 'The {users}.uid of the user who created the record.',
+//      ],
+//      'status' => [
+//        'description' => 'Boolean indicating whether this record is active.',
+//        'type' => 'int',
+//        'unsigned' => TRUE,
+//        'not null' => TRUE,
+//        'default' => 0,
+//        'size' => 'tiny',
+//      ],
+//      'type' => [
+//        'type' => 'varchar_ascii',
+//        'length' => 64,
+//        'not null' => TRUE,
+//        'default' => '',
+//        'description' => 'Type of the record.',
+//      ],
+//      'created' => [
+//        'type' => 'int',
+//        'not null' => TRUE,
+//        'default' => 0,
+//        'description' => 'Timestamp when the record was created.',
+//      ],
+//      'data' => [
+//        'type' => 'blob',
+//        'not null' => TRUE,
+//        'size' => 'big',
+//        'description' => 'The arbitrary data for the item.',
+//      ],
+//    ],
+//    'primary key' => ['id'],
+//    'indexes' => [
+//      'type' => ['type'],
+//      'uid' => ['uid'],
+//      'status' => ['status'],
+//    ],
+//  ];
+//
+//  return $schema;
+//}
+

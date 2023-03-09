@@ -34,6 +34,9 @@ jobs:
       - name: Install site
         run: ddev drush si -y
 
+      - name: Enable testing dependencies.
+        run: ddev drush en cyd_functional_testing -y
+
       - name: Run cypress.
         id: cypress
         run: yarn run cy:run
@@ -52,3 +55,9 @@ jobs:
           name: cypress-results
           path: cypress
           retention-days: 2
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v3
+        with:
+          path: /tmp/composer-cache
+          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}

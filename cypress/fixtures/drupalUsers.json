@@ -1,0 +1,12 @@
+[
+  {
+    "name": "da_boss",
+    "password": "da_boss",
+    "role": "administrator"
+  },
+  {
+    "name": "editor",
+    "password": "editor",
+    "role": "content_editor"
+  }
+]

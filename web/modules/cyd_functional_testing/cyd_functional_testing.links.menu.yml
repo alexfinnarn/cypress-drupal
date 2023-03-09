@@ -1,0 +1,6 @@
+cyd_functional_testing.settings_form:
+  title: 'cyd_functional_testing'
+  description: 'Configure cyd_functional_testing.'
+  parent: system.admin_config_system
+  route_name: cyd_functional_testing.settings_form
+  weight: 10

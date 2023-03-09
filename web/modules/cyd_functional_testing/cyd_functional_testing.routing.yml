@@ -1,0 +1,23 @@
+cyd_functional_testing.example:
+  path: '/cyd-functional-testing/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\cyd_functional_testing\Controller\CydFunctionalTestingController::build'
+  requirements:
+    _permission: 'access content'
+
+cyd_functional_testing.settings_form:
+  path: '/admin/config/system/cyd-functional-testing'
+  defaults:
+    _title: 'cyd_functional_testing settings'
+    _form: 'Drupal\cyd_functional_testing\Form\SettingsForm'
+  requirements:
+    _permission: 'administer cyd_functional_testing configuration'
+
+cyd_functional_testing.export_users:
+  path: '/admin/config/system/cyd-functional-testing/export-users'
+  defaults:
+    _title: 'Export Users'
+    _form: 'Drupal\cyd_functional_testing\Form\ExportUsersForm'
+  requirements:
+    _permission: 'administer cyd_functional_testing configuration'
