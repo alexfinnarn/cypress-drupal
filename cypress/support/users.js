@@ -1,10 +1,11 @@
 export const users = {
-  'administrator': {
-    name: 'da_boss',
+  'da_boss': {
     password: 'da_boss'
   },
   'editor': {
-    name: 'editor',
     password: 'editor'
+  },
+  'a-failure': {
+    password: 'a-failure'
   }
 };

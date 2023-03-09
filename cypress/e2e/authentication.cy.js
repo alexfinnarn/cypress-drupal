@@ -4,8 +4,8 @@ describe('Authentication tests', () => {
 
   it('logs in without custom command', function () {
     cy.visit('/user/login');
-    cy.get('#edit-name').type(users.administrator.name);
-    cy.get('#edit-pass').type(users.administrator.password);
+    cy.get('#edit-name').type('da_boss');
+    cy.get('#edit-pass').type(users.da_boss.password);
     cy.get('input[value="Log in"]').scrollIntoView().click();
 
     cy.visit('/admin/content');
@@ -14,7 +14,7 @@ describe('Authentication tests', () => {
 
   it('Logs in as an administrator', () => {
     // Log in as an administrator.
-    cy.login(users.administrator.name, users.administrator.password);
+    cy.login('da_boss', users.da_boss.password);
 
     // Go visit a page that requires authentication.
     cy.visit('/admin/content');
@@ -31,7 +31,7 @@ describe('Authentication tests', () => {
 
   it('Logs in as an editor', () => {
     // Log in as an editor.
-    cy.login(users.editor.name, users.editor.password);
+    cy.login('editor', users.editor.password);
 
     // Go visit a page that requires authentication.
     cy.visit('/admin/content');

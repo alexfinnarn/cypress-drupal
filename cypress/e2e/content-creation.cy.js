@@ -3,7 +3,7 @@ import {users} from "../support/users";
 describe('Content creation tests', () => {
   it('Creates a new post', () => {
     // Login as a content editor.
-    cy.login(users.editor.name, users.editor.password);
+    cy.login('editor', users.editor.password);
 
     // Visit the content overview page to create a new article.
     cy.visit('/admin/content');
