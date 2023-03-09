@@ -13,3 +13,11 @@ cyd_functional_testing.settings_form:
     _form: 'Drupal\cyd_functional_testing\Form\SettingsForm'
   requirements:
     _permission: 'administer cyd_functional_testing configuration'
+
+cyd_functional_testing.export_users:
+  path: '/admin/config/system/cyd-functional-testing/export-users'
+  defaults:
+    _title: 'Export Users'
+    _form: 'Drupal\cyd_functional_testing\Form\ExportUsersForm'
+  requirements:
+    _permission: 'administer cyd_functional_testing configuration'

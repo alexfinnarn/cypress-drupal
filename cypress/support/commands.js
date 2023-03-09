@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login', (user) => {
+Cypress.Commands.add('login', (user, password) => {
   return cy.session(user, () => {
       cy.request({
         method: 'POST',
@@ -32,7 +32,7 @@ Cypress.Commands.add('login', (user) => {
         form: true,
         body: {
           name: user,
-          pass: user,
+          pass: password,
           form_id: 'user_login_form'
         }
       });

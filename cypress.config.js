@@ -4,6 +4,10 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: "http://deets.ddev.site",
     experimentalStudio: true,
+    drupalUsers: [
+      'editor',
+      'administrator'
+    ],
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
