@@ -7,6 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [ 1, 2 ]
     steps:
       - uses: actions/checkout@v3
       - uses: php-actions/composer@v6
@@ -18,9 +22,6 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-
-      - name: Install cypress dependencies.
-        run: yarn install --frozen-lockfile
 
       - name: Install ddev.
         run: |
@@ -37,9 +38,19 @@ jobs:
       - name: Enable testing dependencies.
         run: ddev drush en cyd_functional_testing -y
 
-      - name: Run cypress.
-        id: cypress
-        run: yarn run cy:run
+#      - name: Install cypress dependencies.
+#        run: yarn install --frozen-lockfile
+#
+#      - name: Run cypress.
+#        id: cypress
+#        run: yarn run cy:run
+
+      - name: Run split Cypress tests 🧪
+        uses: cypress-io/github-action@v5
+        # pass the machine index and the total number
+        env:
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
 
       - name: Publish test results.
         uses: EnricoMi/publish-unit-test-result-action@v1
