@@ -52,20 +52,22 @@ jobs:
           SPLIT: ${{ strategy.job-total }}
           SPLIT_INDEX: ${{ strategy.job-index }}
 
-      - name: Publish test results.
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        if: github.actor != 'dependabot[bot]' && steps.cypress.outcome != 'success'
-        with:
-          files: cypress/*.png
-          check_name: "Cypress Test Results"
-
-      - name: Archive test results.
-        uses: actions/upload-artifact@v2
-        if: steps.cypress.outcome != 'success'
-        with:
-          name: cypress-results
-          path: cypress
-          retention-days: 2
+# These steps fail due to 403 error related to creating steps from a workflow.
+# @see https://github.com/alexfinnarn/cypress-drupal/actions/runs/4381087046/jobs/7668812601#step:11:36
+#      - name: Publish test results.
+#        uses: EnricoMi/publish-unit-test-result-action@v1
+#        if: github.actor != 'dependabot[bot]' && steps.cypress.outcome != 'success'
+#        with:
+#          files: cypress/*.png
+#          check_name: "Cypress Test Results"
+#
+#      - name: Archive test results.
+#        uses: actions/upload-artifact@v2
+#        if: steps.cypress.outcome != 'success'
+#        with:
+#          name: cypress-results
+#          path: cypress
+#          retention-days: 2
 
       - name: Cache Composer dependencies
         uses: actions/cache@v3
