@@ -41,10 +41,6 @@ jobs:
         if: contains(github.event.head_commit.message, '@tags=')
         run: |
           echo "text: ${{ github.event.head_commit.message }}"
-#          readarray -d "@tags=" -t strarr <<< "${{ github.event.head_commit.message }}"
-#          echo "tags: ${strarr[1]}
-          cd lklklslk
-#          yarn run cypress run --env grepTags=${strarr[1]},grepFilterSpecs=true
 
       - name: Run other tests.
         if: !contains(github.event.head_commit.message, '@tags=')
