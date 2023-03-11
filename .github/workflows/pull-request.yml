@@ -38,12 +38,12 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Run tagged tests.
-        if: contains(github.event.head_commit.message, '@tags=')
+        if: ${{ contains(github.event.head_commit.message, '@tags=') }}
         run: |
           echo "text: ${{ github.event.head_commit.message }}"
 
       - name: Run other tests.
-        if: !contains(github.event.head_commit.message, '@tags=')
+        if: ${{ !contains(github.event.head_commit.message, '@tags=') }}
         run: yarn run cypress run
 
       #      - name: Publish test results.
