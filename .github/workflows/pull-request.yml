@@ -35,16 +35,17 @@ jobs:
         run: ddev drush en cyd_functional_testing -y
 
       - name: Install node dependencies.
-        run: npm install --frozen-lockfile
+        run: yarn install --frozen-lockfile
 
       # See more at https://github.com/cypress-io/cypress/tree/develop/npm/grep
       # Only run the tests tagged with @content and filter so fewer tests checked.
       - name: Run tagged tests.
-        run: npm run cypress run --env grepTags=@content,grepFilterSpecs=true
+#        if: !startsWith(github.event.head_commit.message, 'WIP')
+        run: yarn run cypress run --env grepTags=@content,grepFilterSpecs=true
 
       # Run all tests without @content tag. Skips any tests tagged with @content.
       - name: Run other tests.
-        run: npm run cypress run --env grepTags=-@content
+        run: yarn run cypress run --env grepTags=-@content
 
 
       - name: Publish test results.
