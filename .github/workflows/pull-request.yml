@@ -37,8 +37,10 @@ jobs:
       - name: Install node dependencies.
         run: yarn install --frozen-lockfile
 
+      # See more at https://github.com/cypress-io/cypress/tree/develop/npm/grep
+      # Only run the tests tagged with @content and filter so fewer tests checked.
       - name: Run tagged tests.
-        if: contains(github.event.head_commit.message, '@tags=')
+        if: ${{ contains(github.event.head_commit.message, '@tags=') }}
         run: |
           text=$(echo ${{ github.event.head_commit.message }} | grep -oP '(?<=@tags=).*')
           echo "text: $text"
