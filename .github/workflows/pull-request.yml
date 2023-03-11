@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: print stuff
         run: |
-          text=git log -1 --pretty=format:"%s"
+          text=$(git log -1 --pretty=format:"%s")
           echo "text: $text"
           cd slskslk
 
