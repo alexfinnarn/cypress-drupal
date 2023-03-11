@@ -11,6 +11,7 @@ module.exports = defineConfig({
     ],
     setupNodeEvents(on, config) {
       cypressSplit(on, config);
+      require('@cypress/grep/src/plugin')(config);
       // IMPORTANT: return the config object
       return config;
     },

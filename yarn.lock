@@ -46,6 +46,15 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
+"@cypress/grep@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@cypress/grep/-/grep-3.1.4.tgz#4aa5ab9559705079d991079b96395f745e47c1e0"
+  integrity sha512-3xpuuHJQKF/KIyF8dFVIO1qeH2+w67yLjknD68GxtehJAy2AqY+AdICwT4LS6tXrXlhjZLNNA21MT+FcT3+tUA==
+  dependencies:
+    debug "^4.3.4"
+    find-test-names "^1.19.0"
+    globby "^11.0.4"
+
 "@cypress/request@^2.88.10":
   version "2.88.11"
   resolved "https://registry.yarnpkg.com/@cypress/request/-/request-2.88.11.tgz#5a4c7399bc2d7e7ed56e92ce5acb620c8b187047"
@@ -926,7 +935,7 @@ find-cypress-specs@^1.27.1:
     spec-change "^1.6.0"
     ts-node "^10.9.1"
 
-find-test-names@1.28.1:
+find-test-names@1.28.1, find-test-names@^1.19.0:
   version "1.28.1"
   resolved "https://registry.yarnpkg.com/find-test-names/-/find-test-names-1.28.1.tgz#2b0db5eea6efe89885242e2817024f1595ff7635"
   integrity sha512-fP3LL2N3NzYpE+C6oFWmsYLOP+k4N+qX8354lSdaTJWjVjVuUh//zM8RpYb+cEeVd7HLDgTWA7zosjiAV+N+cQ==
