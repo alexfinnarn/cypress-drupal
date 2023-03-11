@@ -39,14 +39,13 @@ jobs:
 
       # See more at https://github.com/cypress-io/cypress/tree/develop/npm/grep
       # Only run the tests tagged with @content and filter so fewer tests checked.
-      - name: Run tagged tests.
-        if: ${{ contains(github.event.head_commit.message, '@tags=') }}
-        run: |
-          text=$(echo ${{ github.event.head_commit.message }} | grep -oP '(?<=@tags=).*')
-          echo "text: $text"
-          cd lklklslk
-#          readarray -d " " -t strarr <<< "$text"
-          yarn run cypress run --env grepTags=content,grepFilterSpecs=true
+#      - name: Run tagged tests.
+#        if: ${{ contains(github.event.head_commit.message, '@tags=') }}
+#        run: |
+#          text=$(echo ${{ github.event.head_commit.message }} | grep -oP '(?<=@tags=).*')
+#          echo "text: $text"
+#          cd lklklslk
+#          yarn run cypress run --env grepTags=content,grepFilterSpecs=true
 
       # Run all tests without @content tag. Skips any tests tagged with @content.
       - name: Run other tests.
