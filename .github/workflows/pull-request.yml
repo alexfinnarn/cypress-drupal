@@ -8,13 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: print stuff
         run: |
           text=$(git log -1 --pretty=format:"%s")
           echo "text: $text"
           cd slskslk
 
-      - uses: actions/checkout@v3
       - uses: php-actions/composer@v6
         with:
           php_version: '8.1'
