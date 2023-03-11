@@ -8,9 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Logging
+      - name: print stuff
         run: |
-          echo "${{toJSON(github.event)}}"
+          text=git log -1 --pretty=format:"%s"
+          echo "text: $text"
           cd slskslk
 
       - uses: actions/checkout@v3
