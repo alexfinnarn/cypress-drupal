@@ -37,7 +37,6 @@ jobs:
       - name: Install node dependencies.
         run: yarn install --frozen-lockfile
 
-      # See more at https://github.com/cypress-io/cypress/tree/develop/npm/grep
       - name: Run tagged tests.
         if: contains(github.event.head_commit.message, '@tags=')
         run: |
