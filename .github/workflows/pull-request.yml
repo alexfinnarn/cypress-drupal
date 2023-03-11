@@ -8,9 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: print stuff
+      - name: Logging
         run: |
-          echo "text: ${{ github.event.commits[0].message }}"
+          echo "${{toJSON(github.event)}}"
           cd slskslk
 
       - uses: actions/checkout@v3
