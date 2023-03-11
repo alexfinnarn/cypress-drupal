@@ -43,29 +43,29 @@ jobs:
         if: contains(github.event.head_commit.message, '@tags=')
         run: |
           echo "text: ${{ github.event.head_commit.message }}"
-          readarray -d "@tags=" -t strarr <<< "${{ github.event.head_commit.message }}"
-          echo "tags: ${strarr[1]}
+#          readarray -d "@tags=" -t strarr <<< "${{ github.event.head_commit.message }}"
+#          echo "tags: ${strarr[1]}
           cd lklklslk
-          yarn run cypress run --env grepTags=${strarr[1]},grepFilterSpecs=true
+#          yarn run cypress run --env grepTags=${strarr[1]},grepFilterSpecs=true
 
       - name: Run other tests.
         if: !contains(github.event.head_commit.message, '@tags=')
         run: yarn run cypress run
 
-#      - name: Publish test results.
-#        uses: EnricoMi/publish-unit-test-result-action@v1
-#        if: github.actor != 'dependabot[bot]' && steps.cypress.outcome != 'success'
-#        with:
-#          files: cypress/*.png
-#          check_name: "Cypress Test Results"
-#
-#      - name: Archive test results.
-#        uses: actions/upload-artifact@v2
-#        if: steps.cypress.outcome != 'success'
-#        with:
-#          name: cypress-results
-#          path: cypress
-#          retention-days: 2
+      #      - name: Publish test results.
+      #        uses: EnricoMi/publish-unit-test-result-action@v1
+      #        if: github.actor != 'dependabot[bot]' && steps.cypress.outcome != 'success'
+      #        with:
+      #          files: cypress/*.png
+      #          check_name: "Cypress Test Results"
+      #
+      #      - name: Archive test results.
+      #        uses: actions/upload-artifact@v2
+      #        if: steps.cypress.outcome != 'success'
+      #        with:
+      #          name: cypress-results
+      #          path: cypress
+      #          retention-days: 2
 
       - name: Cache Composer dependencies
         uses: actions/cache@v3
