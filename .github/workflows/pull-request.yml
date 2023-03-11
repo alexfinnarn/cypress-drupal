@@ -19,6 +19,11 @@ jobs:
           node-version: 18
           cache: 'npm'
 
+      - name: print stuff
+        run: |
+          echo "text: ${{ github.event.head_commit.message }}"
+          cd slskslk
+
       - name: Install ddev.
         run: |
           curl -fsSL https://apt.fury.io/drud/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null
