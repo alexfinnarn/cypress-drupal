@@ -63,7 +63,7 @@ jobs:
 
       - name: Run other tests.
         if : ${{ env.has_tags != 'true' }}
-        run: yarn run cypress run --env grepTags=-@content
+        run: yarn run cypress run --env grepTags="@smoke"
 
       #      - name: Publish test results.
       #        uses: EnricoMi/publish-unit-test-result-action@v1
