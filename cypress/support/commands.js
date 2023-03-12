@@ -24,6 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import "@cypress-audit/lighthouse/commands";
+
 Cypress.Commands.add('login', (user, password) => {
   return cy.session(user, () => {
       cy.request({
