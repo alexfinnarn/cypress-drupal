@@ -1,8 +1,8 @@
 import {users} from "../support/users";
 
-describe('Authentication tests', () => {
+describe('Authentication tests', {tags: '@login'}, () => {
 
-  it('logs in without custom command', {tags: 'login'}, function () {
+  it('logs in without custom command', {tags: '@smoke'}, function () {
     cy.visit('/user/login');
     cy.get('#edit-name').type('da_boss');
     cy.get('#edit-pass').type(users.da_boss.password);
