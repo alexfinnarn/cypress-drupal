@@ -27,11 +27,11 @@ jobs:
             echo "spec_tags=${commit_message[1]}" >> $GITHUB_ENV
           fi
 
-      - name: Test env var sets.
-        run: |
-          echo "has_tags: ${{ env.has_tags }}"
-          echo "spec_tags: ${{ env.spec_tags }}"
-          cd slksksksdsf
+#      - name: Test env var sets.
+#        run: |
+#          echo "has_tags: ${{ env.has_tags }}"
+#          echo "spec_tags: ${{ env.spec_tags }}"
+#          cd slksksksdsf
 
       - uses: php-actions/composer@v6
         with:
