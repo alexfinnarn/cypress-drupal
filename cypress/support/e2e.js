@@ -13,7 +13,9 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-import 'cypress-if';
+// Broken until @see https://github.com/bahmutov/cypress-if/issues/58
+// import 'cypress-if';
+
 import 'cypress-axe';
 import "cypress-real-events";
 import registerCypressGrep from '@cypress/grep/src/support';

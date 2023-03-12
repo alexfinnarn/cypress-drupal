@@ -528,13 +528,6 @@ cypress-axe@^1.4.0:
   resolved "https://registry.yarnpkg.com/cypress-axe/-/cypress-axe-1.4.0.tgz#e67482bfe9e740796bf77c7823f19781a8a2faff"
   integrity sha512-Ut7NKfzjyKm0BEbt2WxuKtLkIXmx6FD2j0RwdvO/Ykl7GmB/qRQkwbKLk3VP35+83hiIr8GKD04PDdrTK5BnyA==
 
-cypress-if@^1.10.4:
-  version "1.10.4"
-  resolved "https://registry.yarnpkg.com/cypress-if/-/cypress-if-1.10.4.tgz#cdc46e494564f372d66150eb90106c39cfe66c34"
-  integrity sha512-NYtM6X5HNAIaNk234nIGB95r7zvVYjsL9WaxCatNRWtsfqGG/NMeCKg1tRrU8Hg2O1qmKdjyAiRLSSUCLSZcvw==
-  dependencies:
-    debug "^4.3.4"
-
 cypress-real-events@^1.7.6:
   version "1.7.6"
   resolved "https://registry.yarnpkg.com/cypress-real-events/-/cypress-real-events-1.7.6.tgz#6f17e0b2ceea1d6dc60f6737d8f84cc517bbbb4c"
