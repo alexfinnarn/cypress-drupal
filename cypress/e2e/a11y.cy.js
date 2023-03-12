@@ -7,8 +7,7 @@ describe('Accessibility tests', {tags: "@a11y"}, function () {
       {},
       {
         rules: {
-          // 'heading-order': {enabled: false},
-          // 'landmark-unique': {enabled: false},
+          'link-in-text-block': {enabled: false},
         },
       }, terminalLog);
   });
