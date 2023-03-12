@@ -1,6 +1,7 @@
 import {users} from "../support/users";
 
 describe('Content creation tests', { tags: 'content' }, () => {
+
   it('Creates a new post', () => {
     // Login as a content editor.
     cy.login('editor', users.editor.password);
@@ -21,18 +22,15 @@ describe('Content creation tests', { tags: 'content' }, () => {
     cy.get('#edit-field-image-0-upload').selectFile('cypress/images/beehat-drupalicon-small.png');
     cy.get('input[name="field_image[0][alt]"]').type('Beehat Druplicon');
 
-    // Try to fill out the body field.
+    // Fill out the body field.
     cy.get('div[aria-label="Editor editing area: main"]').click();
-
     cy.realType('Bob{enter}McDougle{enter}');
-
     cy.get('button[data-cke-tooltip-text="Bulleted List"]').realClick();
     cy.realType('Milk{enter}Eggs{enter}Bread{enter}{enter}');
-
     cy.get('button[data-cke-tooltip-text="Block quote"]').realClick();
     cy.realType('It\'s today, not yesterday!');
 
-    // Try to add tags to the article.
+    // Add tags to the article.
     cy.get('#edit-field-tags-target-id').type('foo,bar{enter}');
 
     // Save the article node.
