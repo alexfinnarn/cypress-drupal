@@ -17,25 +17,21 @@ jobs:
           echo "has_tags=false" >> $GITHUB_ENV
           # Get your last commit message, not the merge commit.
           text=$(git log -1 --no-merges --pretty=%B)
-          # Split commit message by what you want, here is "#".
-          IFS='#'
           # Read the commit message into an array split by "#".
-          read -ra commit_message <<< "$text"
+          readarray -d "#" -t commit_message <<< "$text"
           # Sanity check.
           echo "the tags are: ${commit_message[1]}"
-          # Reset IFS.
-          IFS=''
           # Add tags and overwrite "checking" variable to true if there are tags.
           if [[ "${commit_message[1]}" == *"@"*  ]]; then
             echo "has_tags=true" >> $GITHUB_ENV
             echo "spec_tags=${commit_message[1]}" >> $GITHUB_ENV
           fi
 
-#      - name: Test env var sets.
-#        run: |
-#          echo "has_tags: ${{ env.has_tags }}"
-#          echo "spec_tags: ${{ env.spec_tags }}"
-#          cd slksksks
+      - name: Test env var sets.
+        run: |
+          echo "has_tags: ${{ env.has_tags }}"
+          echo "spec_tags: ${{ env.spec_tags }}"
+          cd slksksks
 
       - uses: php-actions/composer@v6
         with:

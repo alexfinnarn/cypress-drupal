@@ -1,12 +1,13 @@
 describe('Accessibility tests', {tags: "@a11y"}, function () {
   it('has no detectable a11y violations on an article', {tags: '@smoke'},  function () {
     cy.visit('/');
-    // cy.get('h2.node__title').eq(0).click();
     cy.injectAxe();
     cy.checkA11y(
       {},
       {
         rules: {
+          // These are totally arbitrary and based on whatever is on the home page at the time.
+          // @todo Create a route to visit that has known content so we can target rules.
           'link-in-text-block': {enabled: false},
         },
       }, terminalLog);
