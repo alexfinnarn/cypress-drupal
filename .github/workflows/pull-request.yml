@@ -24,11 +24,11 @@ jobs:
             echo "spec_tags=${splitIFS[1]}" >> $GITHUB_ENV
           fi
 
-      - name: Test env var sets.
-        run: |
-          echo "has_tags: ${{ env.has_tags }}"
-          echo "spec_tags: ${{ env.spec_tags }}"
-          cd slksksks
+#      - name: Test env var sets.
+#        run: |
+#          echo "has_tags: ${{ env.has_tags }}"
+#          echo "spec_tags: ${{ env.spec_tags }}"
+#          cd slksksks
 
       - uses: php-actions/composer@v6
         with:
@@ -59,7 +59,7 @@ jobs:
 
       - name: Run tagged tests.
         if : ${{ env.has_tags == 'true' }}
-        run: yarn run cypress run --env grepTags=${{ env.spec_tags }}
+        run: yarn run cypress run --env grepTags=${{ env.spec_tags }},grepFilterSpecs=true
 
       - name: Run other tests.
         if : ${{ env.has_tags != 'true' }}
