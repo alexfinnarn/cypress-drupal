@@ -13,8 +13,9 @@ jobs:
           fetch-depth: 0
       - name: print stuff
         run: |
-          git log -1 --no-merges --pretty=%B
-          echo "blarghhghgh"
+          text=$(git log -1 --no-merges --pretty=%B)
+          readarray -d "@tags=" -t strarr <<< "$text"
+          echo "tags=${strarr[1]}"
           cd slskslk
 
       - uses: php-actions/composer@v6
