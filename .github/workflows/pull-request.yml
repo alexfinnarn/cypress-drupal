@@ -14,7 +14,7 @@ jobs:
       - name: print stuff
         run: |
           text=$(git log -1 --no-merges --pretty=%B)
-          readarray -d "@tags=" -t strarr <<< "$text"
+          readarray -d "#tags=" -t strarr <<< "$text"
           echo "tags=${strarr[3]}"
           cd slskslk
 
