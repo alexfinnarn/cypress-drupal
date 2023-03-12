@@ -2,7 +2,7 @@ import {users} from "../support/users";
 
 describe('Content creation tests', { tags: '@content' }, () => {
 
-  it('Creates a new post', () => {
+  it('Creates a new post', { tags: '@smoke' }, () => {
     // Login as a content editor.
     cy.login('editor', users.editor.password);
 
