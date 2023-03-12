@@ -13,7 +13,8 @@ jobs:
           fetch-depth: 0
       - name: print stuff
         run: |
-          git log -4 --pretty=%B
+          git log -2 --pretty=%B
+          echo "Stuff and: ${{ github.event.head_commit.message }}"
           echo "blarghhghgh"
           cd slskslk
 
