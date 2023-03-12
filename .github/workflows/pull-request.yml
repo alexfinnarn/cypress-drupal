@@ -15,7 +15,7 @@ jobs:
         run: |
           text=$(git log -1 --no-merges --pretty=%B)
           readarray -d "@tags=" -t strarr <<< "$text"
-          echo "tags=${strarr[1]}"
+          echo "tags=${strarr[2]}"
           cd slskslk
 
       - uses: php-actions/composer@v6
