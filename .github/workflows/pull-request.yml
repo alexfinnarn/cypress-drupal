@@ -17,7 +17,7 @@ jobs:
           text=$(git log -1 --no-merges --pretty=%B)
           IFS='#'
           read -ra splitIFS <<< "$text"
-          echo "tags are: ${splitIFS[1]}"
+          echo "the tags are: ${splitIFS[1]}"
           IFS=''
           if [[ "${splitIFS[1]}" == *"@"*  ]]; then
             echo "has_tags=true" >> $GITHUB_ENV
