@@ -13,6 +13,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+import 'cypress-axe';
 import "cypress-real-events";
 import registerCypressGrep from '@cypress/grep/src/support';
 
