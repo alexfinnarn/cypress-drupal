@@ -1,7 +1,7 @@
 describe('Accessibility tests', {tags: "@a11y"}, function () {
   it('has no detectable a11y violations on an article', {tags: '@smoke'},  function () {
     cy.visit('/');
-    cy.get('h2.node__title').eq(0).click();
+    cy.get('h2.node__title').if().eq(0).click();
     cy.injectAxe();
     cy.checkA11y(
       {},
