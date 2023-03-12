@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 0
       - name: print stuff
         run: |
-          git log -1 --merges --pretty=%B
+          git log -1 --no-merges --pretty=%B
           echo "blarghhghgh"
           cd slskslk
 
