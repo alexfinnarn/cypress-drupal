@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 0
       - name: Set tags env variables.
         run: |
-          cho "has_tags=false" >> $GITHUB_ENV
+          echo "has_tags=false" >> $GITHUB_ENV
           text=$(git log -1 --no-merges --pretty=%B)
           IFS='#'
           read -ra splitIFS <<< "$text"
