@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "has_tags: ${{ env.has_tags }}"
           echo "spec_tags: ${{ env.spec_tags }}"
-          cd slksksks
+          cd slksksksdsf
 
       - uses: php-actions/composer@v6
         with:
