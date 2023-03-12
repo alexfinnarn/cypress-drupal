@@ -2,6 +2,9 @@ const {defineConfig} = require("cypress");
 const cypressSplit = require('cypress-split');
 
 module.exports = defineConfig({
+  env: {
+    grepFilterSpecs: true
+  },
   e2e: {
     baseUrl: "http://deets.ddev.site",
     experimentalStudio: true,

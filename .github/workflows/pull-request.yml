@@ -16,12 +16,12 @@ jobs:
           echo "has_tags=false" >> $GITHUB_ENV
           text=$(git log -1 --no-merges --pretty=%B)
           IFS='#'
-          read -ra splitIFS <<< "$text"
-          echo "the tags are: ${splitIFS[1]}"
+          read -ra commit_message <<< "$text"
+          echo "the tags are: ${commit_message[1]}"
           IFS=''
-          if [[ "${splitIFS[1]}" == *"@"*  ]]; then
+          if [[ "${commit_message[1]}" == *"@"*  ]]; then
             echo "has_tags=true" >> $GITHUB_ENV
-            echo "spec_tags=${splitIFS[1]}" >> $GITHUB_ENV
+            echo "spec_tags=${commit_message[1]}" >> $GITHUB_ENV
           fi
 
 #      - name: Test env var sets.
@@ -59,7 +59,7 @@ jobs:
 
       - name: Run tagged tests.
         if : ${{ env.has_tags == 'true' }}
-        run: yarn run cypress run --env grepTags=${{ env.spec_tags }},grepFilterSpecs=true
+        run: yarn run cypress run --env grepTags=${{ env.spec_tags }}
 
       - name: Run other tests.
         if : ${{ env.has_tags != 'true' }}
