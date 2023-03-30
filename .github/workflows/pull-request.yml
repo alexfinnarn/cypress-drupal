@@ -33,10 +33,12 @@ jobs:
 #          echo "spec_tags: ${{ env.spec_tags }}"
 #          cd slksksksdsf
 
-      - uses: php-actions/composer@v6
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
         with:
-          php_version: '8.1'
-          php_extensions: gd
+          php-version: '8.1'
+          extensions: gd
+          tools: composer
       - uses: actions/setup-node@v3
         with:
           node-version: 18
