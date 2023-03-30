@@ -54,7 +54,10 @@ jobs:
         run: ./scripts/setup.sh
 
       - name: Enable testing dependencies.
-        run: ddev drush en cyd_functional_testing -y
+        run:  |
+          cp -R modules/cyd_functional_testing /web/modules/custom/
+          ls -al /web/modules/custom/
+          ddev drush en cyd_functional_testing -y
 
       - name: Install node dependencies.
         run: yarn install --frozen-lockfile
