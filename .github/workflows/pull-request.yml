@@ -55,6 +55,7 @@ jobs:
 
       - name: Enable testing dependencies.
         run:  |
+          ls -al
           cp -R modules/cyd_functional_testing /web/modules/custom/
           ls -al /web/modules/custom/
           ddev drush en cyd_functional_testing -y
