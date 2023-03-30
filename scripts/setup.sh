@@ -6,6 +6,6 @@ echo "\n\n\nListing stuff...\n\n\n"
 ls -al
 echo "\n\n\nStarting ddev...\n\n\n"
 ddev start
-ddev composer create drupal/recommended-project
+ddev composer create drupal/recommended-project web
 ddev composer require drush/drush
 ddev drush site:install --account-name=admin --account-pass=admin -y
