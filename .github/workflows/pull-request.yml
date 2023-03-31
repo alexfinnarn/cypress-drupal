@@ -51,14 +51,20 @@ jobs:
           sudo apt update && sudo apt install -y ddev
 
       - name: Setup Drupal website.
-        run: ./scripts/setup.sh
+        run: |
+          mkdir drupal
+          cd drupal
+          ./scripts/setup.sh
+          cd -
 
       - name: Enable testing dependencies.
         run:  |
           ls -al
-          cp -R modules/cyd_functional_testing /web/modules/custom/
-          ls -al /web/modules/custom/
+          cp -R modules/cyd_functional_testing drupal/web/modules/custom/
+          ls -al drupal/web/modules/custom/
+          cd drupal
           ddev drush en cyd_functional_testing -y
+          cd -
 
       - name: Install node dependencies.
         run: yarn install --frozen-lockfile
