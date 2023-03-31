@@ -56,6 +56,8 @@ jobs:
       - name: Enable testing dependencies.
         run:  |
           ls -al
+          ls -al drupal
+          ls -al web
           cp -R modules/cyd_functional_testing drupal/web/modules/custom/
           ls -al drupal/web/modules/custom/
           cd drupal
