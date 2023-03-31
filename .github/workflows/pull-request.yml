@@ -57,7 +57,7 @@ jobs:
         run:  |
           ls -al
           ls -al drupal
-          ls -al web
+          ls -al drupal/web
           cp -R modules/cyd_functional_testing drupal/web/modules/custom/
           ls -al drupal/web/modules/custom/
           cd drupal
