@@ -18,18 +18,12 @@ The codebase also uses DDEV which you will have to install yourself: https://dde
 Then you can run:
 
 ```bash
-# Install dependencies
-ddev composer install
-
-# Start the web server.
-ddev start
-
-# Install Drupal.
-ddev drush si
+# Install dependencies and create the Drupal site in /drupal.
+./scripts/setup.sh
 ```
 
-Now you have a fresh Drupal 10 site with the standard install profile. Make sure you start the Drupal site before
-trying to run Cypress tests. Otherwise, they will all fail.
+Now you have a fresh Drupal 10 site with the standard install profile in the `/drupal` directory. The baseURL is set
+in `cypress.config.js` and is `http://drupal.ddev.site`.
 
 ## Cypress
 
