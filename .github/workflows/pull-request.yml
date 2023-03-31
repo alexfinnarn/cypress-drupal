@@ -55,13 +55,6 @@ jobs:
 
       - name: Enable testing dependencies.
         run:  |
-#          ls -al
-#          echo "\n\n\nchecking drupal directory\n\n\n"
-#          ls -al drupal
-#          echo "\n\n\nchecking drupal/web directory\n\n\n"
-#          ls -al drupal/web
-#          echo "\n\n\nchecking web directory\n\n\n"
-#          ls -al web
           mv modules/cyd_functional_testing drupal/web/modules/custom/
           ls -al drupal/web/modules/custom/
           cd drupal
