@@ -33,10 +33,12 @@ jobs:
 #          echo "spec_tags: ${{ env.spec_tags }}"
 #          cd slksksksdsf
 
-      - uses: php-actions/composer@v6
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
         with:
-          php_version: '8.1'
-          php_extensions: gd
+          php-version: '8.1'
+          extensions: gd
+          tools: composer
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -48,14 +50,16 @@ jobs:
           echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list
           sudo apt update && sudo apt install -y ddev
 
-      - name: Boot dddev
-        run: ddev start
-
-      - name: Install site
-        run: ddev drush si -y
+      - name: Setup Drupal website.
+        run: ./scripts/setup.sh
 
       - name: Enable testing dependencies.
-        run: ddev drush en cyd_functional_testing -y
+        run:  |
+          mv modules/cyd_functional_testing drupal/web/modules/custom/
+          ls -al drupal/web/modules/custom/
+          cd drupal
+          ddev drush en cyd_functional_testing -y
+          cd ../
 
       - name: Install node dependencies.
         run: yarn install --frozen-lockfile
