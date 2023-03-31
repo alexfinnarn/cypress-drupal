@@ -1,9 +1,8 @@
 *.idea
 
-vendor
 node_modules
 
-web/sites/default/files
+drupal
 
 cypress/screenshots
 cypress/videos

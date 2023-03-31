@@ -3,7 +3,7 @@
 # Create directory for Drupal 10 so we don't blow away all the files in the
 # main directory.
 mkdir drupal
-cd drupal
+cd drupal || exit
 
 # Taken from https://ddev.readthedocs.io/en/stable/users/quickstart/
 ddev config --project-type=drupal10 --docroot=web --create-docroot

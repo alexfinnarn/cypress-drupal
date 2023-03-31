@@ -7,7 +7,7 @@ module.exports = defineConfig({
     grepFilterSpecs: true
   },
   e2e: {
-    baseUrl: "http://deets.ddev.site",
+    baseUrl: "http://drupal.ddev.site",
     experimentalStudio: true,
     drupalUsers: [
       'editor',
