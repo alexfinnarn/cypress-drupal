@@ -689,10 +689,10 @@ cypress-real-events@^1.7.6:
   resolved "https://registry.yarnpkg.com/cypress-real-events/-/cypress-real-events-1.7.6.tgz#6f17e0b2ceea1d6dc60f6737d8f84cc517bbbb4c"
   integrity sha512-yP6GnRrbm6HK5q4DH6Nnupz37nOfZu/xn1xFYqsE2o4G73giPWQOdu6375QYpwfU1cvHNCgyD2bQ2hPH9D7NMw==
 
-cypress-split@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/cypress-split/-/cypress-split-1.3.3.tgz#3aa512f9b11dd8efc51c5dd28cd6d3c726c4052e"
-  integrity sha512-DwarT9kXDc3nn6C5R+dYFlekPRhMGLW7tbJWiO8IkkvXohkICMuZHLs72uMOuh4jyF9ywZ/MsumbSzybjfnxHg==
+cypress-split@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/cypress-split/-/cypress-split-1.3.5.tgz#d59d843bf9f1c55af9bd1892b2af2006f47647bf"
+  integrity sha512-Ul/3Sr85yMxVOlagxPXsR6hDgGgb6kraphGyLMf5d7guUAi69jErO/1lCIcVq9HuS2NWR+52RPp+raKP0c4h1Q==
   dependencies:
     "@actions/core" "^1.10.0"
     console.table "^0.10.0"
