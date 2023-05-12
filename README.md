@@ -59,6 +59,15 @@ Resources:
 - [@cypress-audit/lighthouse](https://mfrachet.github.io/cypress-audit/guides/lighthouse/installation.html) - Run Lighthouse audits on your site.
 - [cypress-grep](https://github.com/cypress-io/cypress-grep) - Run a subset of tests based on a tags and filters.
 
+To add:
+- [cypress-if](https://github.com/bahmutov/cypress-if) - Easy conditional if-else logic for your Cypress tests.
+- [cypress-spok](https://github.com/bahmutov/cy-spok) - Write assertions using Spok, an object schema assertion library.
+- [eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress) - Lint your Cypress tests using ESLint.
+- [Chrome Recorder](https://github.com/cypress-io/cypress-chrome-recorder) - Record your Cypress tests using Chrome DevTools.
+- [Drag and Drop](https://github.com/4teamwork/cypress-drag-drop) - Drag and drop elements in your Cypress tests.
+- Visual Regression - https://github.com/odai-alali/cypress-odiff#using-in-tests
+- Cypress Recurse - https://github.com/bahmutov/cypress-recurse#examples
+
 ### Cypress Examples
 
 - [viewport](cypress/e2e/viewports.cy.js) - Set the viewport size for your tests.
