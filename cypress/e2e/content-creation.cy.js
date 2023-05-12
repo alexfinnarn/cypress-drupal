@@ -1,8 +1,13 @@
 import {users} from "../support/users";
+import { slowCypressDown } from 'cypress-slow-down'
 
 describe('Content creation tests', { tags: '@content' }, () => {
 
   it('Creates a new post', { tags: '@smoke' }, () => {
+    // slow down each command by the default amount
+    // which is 1 second
+    slowCypressDown(500);
+
     // Login as a content editor.
     cy.login('editor', users.editor.password);
 

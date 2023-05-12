@@ -22,12 +22,12 @@ const PAGES = [
   'bunnies' => [
     'title' => 'Cute Bunnies!',
     'path' => '/bunnies',
-    'body' => 'Bunnies are cute!',
+    'body' => '<p>Bunnies are cute!</p>',
   ],
   'rabbits' => [
     'title' => 'Gross Rabbits',
     'path' => '/rabbits',
-    'body' => 'Rabbits are gross!!!',
+    'body' => '<p>Rabbits are gross!!!</p>',
   ],
 ];
 
