@@ -701,10 +701,10 @@ cypress-slow-down@^1.2.1:
   dependencies:
     cypress-plugin-config "^1.0.0"
 
-cypress-split@^1.3.7:
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/cypress-split/-/cypress-split-1.3.7.tgz#1cb96bce3525bda69f65d1aeb5a080287e00ed8a"
-  integrity sha512-SoSy8SksZ51FJA/lM4lSLhWo9L4vw3IBU7UvPtTifbkNG4SuBxRNhg2sx8yP4A6IXlbPk7MB2z9JULiZDkPBkA==
+cypress-split@^1.3.12:
+  version "1.3.12"
+  resolved "https://registry.yarnpkg.com/cypress-split/-/cypress-split-1.3.12.tgz#95830cad8bd726692ed3020f9ecc3ce8b7fe6c36"
+  integrity sha512-I++iEDjI8FY1vx2MfeDvn65Xzm2Hd2vDlOcmKcNZavFzH3Vj7HAH8nEzlGRjPa/Q3A9lxs/LMY6hxbRJCJ76pg==
   dependencies:
     "@actions/core" "^1.10.0"
     console.table "^0.10.0"
