@@ -689,10 +689,12 @@ cypress-plugin-config@^1.0.0:
   resolved "https://registry.yarnpkg.com/cypress-plugin-config/-/cypress-plugin-config-1.2.1.tgz#aa7eaa55ab5ce5e186ab7d0e37cc7e42bfb609b4"
   integrity sha512-z+bQ7oyfDKun51HiCVNBOR+g38/nYRJ7zVdCZT2/9UozzE8P4iA1zF/yc85ePZLy5NOj/0atutoUPBBR5SqjSQ==
 
-cypress-real-events@^1.7.6:
-  version "1.7.6"
-  resolved "https://registry.yarnpkg.com/cypress-real-events/-/cypress-real-events-1.7.6.tgz#6f17e0b2ceea1d6dc60f6737d8f84cc517bbbb4c"
-  integrity sha512-yP6GnRrbm6HK5q4DH6Nnupz37nOfZu/xn1xFYqsE2o4G73giPWQOdu6375QYpwfU1cvHNCgyD2bQ2hPH9D7NMw==
+cypress-real-events@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/cypress-real-events/-/cypress-real-events-1.9.1.tgz#75fc4f73ec8b7775467ef940d52d12fe440c99e3"
+  integrity sha512-eDYW6NagNs8+68ugyPbB6U1aIsYF0E0WHR6upXo0PbTXZNqBNc2s9Y0u/N+pbU9HpFh+krl6iMhoz/ENlYBdCg==
+  dependencies:
+    prettier "^3.0.0"
 
 cypress-slow-down@^1.2.1:
   version "1.2.1"
@@ -2030,6 +2032,11 @@ prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
+
+prettier@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.0.tgz#e7b19f691245a21d618c68bc54dc06122f6105ae"
+  integrity sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==
 
 pretty-bytes@^5.6.0:
   version "5.6.0"
